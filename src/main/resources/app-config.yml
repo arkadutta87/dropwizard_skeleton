@@ -1,0 +1,39 @@
+database:
+  driverClass: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost/dropwizard_skeleton
+  user: dropwizard
+  password: dropwizard
+  maxWaitForConnection: 1s
+  validationQuery: "SELECT 1"
+  validationQueryTimeout: 3s
+  minSize: 8
+  maxSize: 32
+  checkConnectionWhileIdle: false
+  evictionInterval: 10s
+  minIdleTime: 1 minute
+  checkConnectionOnBorrow: true
+
+server:
+
+  applicationConnectors:
+  - type: http
+    port: 8080
+  adminConnectors:
+  - type: http
+    port: 8081
+
+
+booksConfigured:
+  - id: 1
+    title : "Web Services with Drop-Wizard"
+    authors :
+      - "Arka Dutta"
+      - "Abhilash Bhanukat Mandaliya"
+    dateOfPublish : "2018-12-26"
+
+  - id: 2
+    title : "Redis on Google Cloud Platform"
+    authors :
+      - "Arka Dutta"
+      - "Anish Singh"
+    dateOfPublish : "2018-12-25"

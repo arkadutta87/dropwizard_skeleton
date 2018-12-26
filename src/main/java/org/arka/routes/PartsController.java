@@ -1,6 +1,8 @@
 package org.arka.routes;
 
 import com.codahale.metrics.annotation.Timed;
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
 
 import java.util.List;
 
@@ -20,16 +22,18 @@ import org.arka.model.Part;
 import org.arka.model.Representation;
 import org.arka.service.PartsService;
 import org.eclipse.jetty.http.HttpStatus;
+import org.skife.jdbi.v2.DBI;
 
 @Path("/parts")
 @Produces(MediaType.APPLICATION_JSON)
 @RolesAllowed("ADMIN")
 public class PartsController {
 
-  private final PartsService partsService;;
+  @Inject
+  @Named("partsService")
+  private PartsService partsService;
 
-  public PartsController(PartsService partsService) {
-    this.partsService = partsService;
+  public PartsController() {
   }
 
   @GET

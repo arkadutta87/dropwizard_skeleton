@@ -3,14 +3,26 @@ package org.arka.configuration;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.List;
+
+
+import org.arka.model.Book;
 
 import io.dropwizard.Configuration;
 import io.dropwizard.db.DataSourceFactory;
 
-public class DropwizardBlogConfiguration extends Configuration {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class AppConfig extends Configuration {
 
   private static final String DATABASE = "database";
+
+  @JsonProperty
+  @NotNull
+  @Valid
+  private List<Book> booksConfigured;
 
   @Valid
   @NotNull
@@ -24,5 +36,9 @@ public class DropwizardBlogConfiguration extends Configuration {
   @JsonProperty(DATABASE)
   public void setDataSourceFactory(final DataSourceFactory dataSourceFactory) {
     this.dataSourceFactory = dataSourceFactory;
+  }
+
+  public List<Book> getBooksConfigured() {
+    return booksConfigured;
   }
 }

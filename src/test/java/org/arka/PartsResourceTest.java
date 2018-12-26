@@ -33,7 +33,7 @@ public class PartsResourceTest {
 
   @ClassRule
   public static final ResourceTestRule resources =
-      ResourceTestRule.builder().addResource(new PartsController(partsService)).build();
+      ResourceTestRule.builder().addResource(new PartsController()).build();
 
   private final Part part = new Part(1, TEST_PART_NAME, TEST_PART_CODE);
 

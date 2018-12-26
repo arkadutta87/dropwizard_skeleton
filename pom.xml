@@ -50,6 +50,13 @@
       <version>${mockito.version}</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/ru.vyarus/dropwizard-guicey -->
+    <dependency>
+      <groupId>ru.vyarus</groupId>
+      <artifactId>dropwizard-guicey</artifactId>
+      <version>4.1.0</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -83,7 +90,7 @@
                   implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
                 <transformer
                   implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass> org.arka.application.DropwizardBlogApplication</mainClass>
+                  <mainClass>org.arka.application.SkeletonApplication</mainClass>
                 </transformer>
               </transformers>
             </configuration>
