@@ -5,4 +5,4 @@ CREATE DATABASE dropwizard_skeleton;
 GRANT ALL PRIVILEGES ON dropwizard.*  TO 'dropwizard'@'localhost';
 
 ---- Start the application ------
-java -jar target/dropwizard_skeleton-1.0.jar server ./src/main/resources/configuration.yml 
+java -jar target/dropwizard_skeleton-1.0.jar server ./src/main/resources/app-config.yml
