@@ -3,3 +3,6 @@ CREATE  TABLE IF NOT EXISTS `dropwizard_skeleton`.`parts` (`id` INT  AUTO_INCREM
 CREATE USER 'dropwizard'@'localhost' IDENTIFIED BY 'dropwizard';
 CREATE DATABASE dropwizard_skeleton;
 GRANT ALL PRIVILEGES ON dropwizard.*  TO 'dropwizard'@'localhost';
+
+---- Start the application ------
+java -jar target/dropwizard-blog-1.0.0.jar server configuration.yml
