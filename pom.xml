@@ -57,6 +57,24 @@
       <version>4.1.0</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.dh.cfg4j</groupId>
+      <artifactId>cfg4j-dh-core</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <!-- For Consul integration -->
+    <dependency>
+      <groupId>org.dh.cfg4j</groupId>
+      <artifactId>cfg4j-dh-consul</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <!-- For git integration -->
+    <dependency>
+      <groupId>org.dh.cfg4j</groupId>
+      <artifactId>cfg4j-dh-git</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
   </dependencies>
 
   <build>

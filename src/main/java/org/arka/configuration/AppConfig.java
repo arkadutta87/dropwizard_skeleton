@@ -24,6 +24,11 @@ public class AppConfig extends Configuration {
   @Valid
   private List<Book> booksConfigured;
 
+  @JsonProperty
+  @NotNull
+  @Valid
+  private GitConfig gitConfig;
+
   @Valid
   @NotNull
   private DataSourceFactory dataSourceFactory = new DataSourceFactory();
@@ -40,5 +45,9 @@ public class AppConfig extends Configuration {
 
   public List<Book> getBooksConfigured() {
     return booksConfigured;
+  }
+
+  public GitConfig getGitConfig() {
+    return gitConfig;
   }
 }
