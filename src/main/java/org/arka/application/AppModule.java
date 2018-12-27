@@ -5,6 +5,7 @@ import com.google.inject.name.Names;
 import javax.sql.DataSource;
 
 import org.arka.configuration.AppConfig;
+import org.arka.service.BooksService;
 import org.arka.service.PartsService;
 import org.skife.jdbi.v2.DBI;
 
@@ -16,6 +17,7 @@ public class AppModule extends SkeletonDropwizardAwareModule<AppConfig> {
   protected void configure() {
 
     bindPartsService();
+    bind(BooksService.class).asEagerSingleton();
 
   }
 
