@@ -2,6 +2,10 @@ package org.arka.application;
 
 import com.google.inject.name.Names;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.sql.DataSource;
@@ -15,6 +19,7 @@ import org.cfg4j.provider.ConfigurationProviderBuilder;
 import org.cfg4j.source.ConfigurationSource;
 import org.cfg4j.source.context.environment.Environment;
 import org.cfg4j.source.context.environment.ImmutableEnvironment;
+import org.cfg4j.source.context.filesprovider.ConfigFilesProvider;
 import org.cfg4j.source.git.GitConfigurationSourceBuilder;
 import org.cfg4j.source.reload.ReloadStrategy;
 import org.cfg4j.source.reload.strategy.PeriodicalReloadStrategy;
@@ -38,8 +43,20 @@ public class AppModule extends SkeletonDropwizardAwareModule<AppConfig> {
     String configRepoPath = configuration().getGitConfig().getConfigRepoPath();
     String branch = configuration().getGitConfig().getBranch();
 
+    List<String> configFiles = configuration().getGitConfig().getConfigFiles();
+
+    List<Path> configPaths = new ArrayList<>();
+
+    configFiles.forEach(aFile -> {
+      configPaths.add(Paths.get(aFile));
+    });
+
+    // Specify which files to load. Configuration from both files will be merged.
+    ConfigFilesProvider configFilesProvider = () -> configPaths;
+
     ConfigurationSource source = new GitConfigurationSourceBuilder()
         .withRepositoryURI(configRepoPath)
+        .withConfigFilesProvider(configFilesProvider)
         .build();
 
     // Select branch to use (use new DefaultEnvironment()) for master

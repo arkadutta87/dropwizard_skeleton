@@ -41,4 +41,8 @@ booksConfigured:
 gitConfig:
   configRepoPath: https://github.com/arkadutta87/cfg4j-git-sample-config.git
   branch: master
+  configFiles:
+    - app-config.yml
+    - books.yml
+
 
