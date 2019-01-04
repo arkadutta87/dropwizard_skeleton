@@ -43,6 +43,6 @@ gitConfig:
   branch: master
   configFiles:
     - app-config.yml
-    - books.yml
+    - books.json
 
 
