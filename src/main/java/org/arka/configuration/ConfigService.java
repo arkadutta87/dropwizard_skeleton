@@ -22,15 +22,15 @@ public class ConfigService {
 //    configurationProvider.bindKey("books", BookConfigV2.class);
   }
 
-  private <T> T getConfigObject(String prefix, Class<T> type){
-    return this.configurationProvider.extract(prefix, type);
+  private <T> T getConfigObject(Class<T> type){
+    return this.configurationProvider.extract(type);
   }
 
   public TestConfigV2 getReksioConfig() {
-    return getConfigObject("reksio",TestConfigV2.class );
+    return getConfigObject(TestConfigV2.class );
   }
 
   public BookConfigV3 getBookV2() {
-    return getConfigObject("booksConfig", BookConfigV3.class);
+    return getConfigObject( BookConfigV3.class);
   }
 }

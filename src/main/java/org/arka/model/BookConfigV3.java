@@ -2,6 +2,9 @@ package org.arka.model;
 
 import java.util.List;
 
+import org.cfg4j.provider.ConfigMeta;
+
+@ConfigMeta(configKey="booksConfig",bindedFileName="books.json" )
 public class BookConfigV3 {
 
   private List<BookConfigV2> books;

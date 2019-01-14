@@ -3,6 +3,9 @@ package org.arka.model;
 import java.util.List;
 import java.util.Map;
 
+import org.cfg4j.provider.ConfigMeta;
+
+@ConfigMeta(configKey="reksio",bindedFileName="app-config.yml" )
 public class TestConfigV2 {
 
   private boolean awake;
