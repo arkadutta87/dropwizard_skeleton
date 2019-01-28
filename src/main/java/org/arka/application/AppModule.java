@@ -68,6 +68,7 @@ public class AppModule extends SkeletonDropwizardAwareModule<AppConfig> {
     // Create provider
     ConfigurationProvider configurationProvider = new ConfigurationProviderBuilder()
         .withConfigurationSource(source)
+        .withBasePathToConfigMetaClasses("org.arka.model")
         .withEnvironment(environment)
         .withReloadStrategy(reloadStrategy)
         .build();
