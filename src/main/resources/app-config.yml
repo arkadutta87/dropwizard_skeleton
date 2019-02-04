@@ -45,5 +45,6 @@ gitConfig:
     - app-config.yml
     - books.json
     - ./stage/books.json
+    - ./prod/books.json
 
 
