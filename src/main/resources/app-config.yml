@@ -39,7 +39,7 @@ booksConfigured:
     dateOfPublish : "2018-12-25"
 
 gitConfig:
-  configRepoPath: https://github.com/arkadutta87/cfg4j-git-sample-config.git
+  configRepoPath: git@git.newshunt.com:arka.dutta/cfg4j-experiment.git
   branch: master
   configFiles:
     - app-config.yml
